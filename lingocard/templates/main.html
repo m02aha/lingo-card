@@ -1,0 +1,206 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- webfont -->
+    <link rel="stylesheet" href="{% static '../static/styles/allmin.css' %}"/>
+    <!-- normalize  -->
+    <link rel="stylesheet" href="{% static '../static/styles/normalize.css' %}"/>
+    <!-- main css  -->
+    <link rel="stylesheet" href="{% static '../static/styles/lingo.css' %}"/>
+    <!-- google font  -->
+<style>
+  #translate{
+         background-color: #ececec59;
+    margin-bottom: 100px;
+    padding: 17px;
+    margin-top: 30px;
+}
+.search{
+  margin-top:70px;
+  margin-left: auto;
+  margin-right: auto;
+}
+  
+  .search label{
+      font-size: 24px;
+    font-weight: 500;
+    color: #000000cc;
+  }
+ select {
+
+    margin-left: 20px;
+    padding: 12px;
+    border-radius: 3px;
+  }
+   select option{
+    font-size: 18px;
+    font-weight: 500px;
+    color: #000000cc;
+   }
+   #translate input{
+    width: 100%;
+    height: 100px;
+    border: solid 1px #ececec;
+    border-radius: 3px;
+   }
+   #translate button{
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100px;
+    background-color: #1feda9;
+    color: white;
+    border: none;
+    font-weight: 700;
+    border-radius: 3px;
+   }
+   .trans-card{
+    width:100%;
+    /* max-width: 500px; */
+        background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    margin-top: 50px;
+    
+    text-align: center;
+
+   }
+   .revision{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+   .trans-card p{
+        font-size: 23px;
+    color: #000000cf;
+    margin-top: 30px;
+
+    
+   }
+
+   .trans-card audio{
+    margin-top: 50px;
+   }
+
+.check-status{margin-top: 30px;
+    margin-bottom: 30px;}
+.check-status label{margin-left: 20px;
+    font-size: 18px;
+}
+
+.answer{
+  display: none;
+
+}
+.opened{
+  display: block;
+}
+ .flip{
+  cursor: pointer;
+      margin-left: 324px;
+    background-color: var(--main-color);
+    color: white;
+    padding: 6px;
+    border-radius: 3px;
+    font-size: 18px;
+  
+} 
+</style>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&family=Cairo:wght@200;300;400;500;600;700;800;900&family=Jomhuria&family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <title>Lingo card</title>
+</head>
+<body>
+   
+    <header>
+        <div class="container">
+
+            <div class="header-container">
+                <div class="logo">
+                    <a href="{% url 'home'%}">Lingo Card</a> 
+                  </div>
+      
+                  <nav>
+                      <ul  class="main-nav">
+                         {% if request.user.is_authenticated %}
+
+                          <li> <a  href="{% url 'translate'%}">hello {{ request.user.username }}, start translating</a></li>
+                       <li><a  href="{% url 'logout'%}">logout</a></li>  
+                       <li><a  href="{% url 'revise'%}">revise</a></li>  
+
+                          {% else %}
+
+                            <li> 
+                              <a  href="{% url 'register'%}">register to start learning</a></li>
+
+                         {% endif %}
+                         
+                         </ul>
+        
+                  </nav>
+      
+            </div>
+        
+        
+            
+          
+            </div>
+             
+        </div>
+    
+    </header>
+{% block content %}
+
+{% endblock%}
+
+<!-- sart footer  -->
+
+<footer>
+  <div class="container">
+
+    <!-- <div class="box"> -->
+      <h4>Lingo Card</h4>
+
+      <!--  -->
+
+    </div>
+
+
+  
+  <p class="end-line">Made With &lt;   By maha</p>
+</footer>
+<!-- end footer   -->
+<script src="main.js"></script> 
+<script>
+    const allstatus=document.querySelectorAll('input[type="radio"]');
+    allstatus.forEach((radio)=>{radio.addEventListener('change',function(){
+        // finding the closest form and submit it/\
+        this.closest('form').submit(); 
+    })});
+
+    const flip=document.querySelectorAll(".flip");
+    // console.log(flip);
+
+//  console.log(answer);
+    flip.forEach((ele)=>{
+      ele.addEventListener('click',function(){
+        const answer=ele.closest(".trans-card").querySelector(".answer");
+    answer.classList.toggle("opened");
+    if (answer.classList.contains("opened")){
+      ele.textContent='hide';
+    }else{
+        ele.textContent='check answer';
+    }
+    })
+    })
+    
+    </script>
+</body>
+</html>

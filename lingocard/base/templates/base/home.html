@@ -1,0 +1,239 @@
+{% extends 'main.html' %}
+{% load static%}
+{% block content %}
+
+    <div class="landing">
+      <div class="container">
+        <!-- {% if messages %}
+
+    <ul>
+      {% for message in messages%}
+      <li>
+        {{message}}
+      </li>
+ 
+
+      {% endfor %}
+    </ul>
+    {% endif %} -->
+        <div class="content">
+
+          <div class="text">
+            <h1>" Translate , Learn , and Never Forget – Master Any Language with Science-Backed Memory Techniques! "</h1>
+            <!-- <p>Unlock the power of Active Recall and Spaced Repetition to memorize new words and phrases effectively. Our smart translator saves every translated text and audio and helps you revise with flashcards designed to reinforce learning at the perfect time. -->
+            
+            
+           {% if request.user.is_authenticated %}
+  <div class="call">
+     <a href="{% url 'translate'%}" style="text-decoration:none; color:rgba(0, 0, 0, 0.695); font-size: 20px; ">start translating</a> 
+    </div>
+    {% else %}
+     <div class="call">
+     <a href="{% url 'register'%}" style="text-decoration:none; color:rgba(0, 0, 0, 0.695); font-size: 20px; "> 🚀 login to start </a> 
+    </div>
+             {% endif %}
+                    </div>
+
+                    <div class="image">
+                      <img src="{% static '../static/images/landing-lingo.jpg' %}" alt="">
+                    
+                   </div>
+        </div>
+      
+        <a href="#" class="go-down">
+          <i class="fas fa-angle-double-down fa-2x"></i>
+        </a>
+      </div>
+    </div>
+
+
+
+  <div class="features">
+
+    <div class="main-title">
+      <h3>features</h3>
+    </div>
+
+    <div class="container">
+
+      <div class="card quality">
+        <div class="image">
+          <img src="imgs/features-01.jpg" alt="">
+        </div>
+        <div class="text">
+
+         
+          <h4>translation is saved: Audio + Text</h4>
+
+      
+          <p>Listen and read for a full-language experience while translation is saved for future revision. </p>
+        
+      
+     
+      
+        
+        </div>
+      </div>
+
+      <div class="card  time">
+
+        <div class="image">
+          <img src="imgs/features-02.jpg" alt="">
+        </div>
+        <div class="text">
+
+        
+          <h4>Master Vocabulary Faster</h4>
+
+        
+          <p>Active Recall using flash cards strengthens memory retention.</p>
+        
+       
+         
+    
+        
+        </div>
+      </div>
+
+
+      <div class="card passion">
+        <div class="image">
+          <img src="imgs/features-03.jpg" alt="">
+        </div>
+        <div class="text">
+          <h4>Personalized Learning schedule</h4>
+          
+          
+          <p>Spaced Repetition ensures you revise at the right time based on your difficulty level</p>
+        
+      
+        
+     
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonials">
+    <div class="main-title">
+      <h3>The Science Behind It</h3>
+    </div>
+    <div class="container">
+
+<div class="card">
+  
+  <h4>🔬 Active Recall:</h4>
+ 
+ 
+ 
+  <p>Studies show that actively trying to remember information strengthens neural connections, making it easier to retrieve later. Our flashcards force your brain to
+     recall words instead of just recognizing them.</p>
+</div>
+
+<div class="card">
+
+  <h4>🧠 Spaced Repetition:</h4>
+ 
+  <p>Instead of cramming, spaces out revision sessions is key to tackle forgetting curve . Hard words are shown frequently, while easier ones appear less often, ensuring maximum retention with minimum effort.</p>
+</div>
+</div>
+
+
+
+
+
+
+
+  <!-- start of how it works  -->
+
+<div class="how">
+
+   <div class="main-title">
+    <h3>how it works?</h3>
+  </div>
+
+  <div class="container">
+    <div class="image">
+      <img src="imgs/work-steps.png" alt="">
+    </div>
+
+<div class="cards-container">
+
+  <div class="card">
+  
+    <div class="main">
+      <!-- <img src="imgs/work-steps-1.png" alt=""> -->
+
+      <div class="text">
+        <h3>1️⃣ Translate & Save:</h3>
+        
+       <p>Every translated word, sentence, or phrase is automatically stored with text and audio.
+        </p>
+ 
+       </div>
+    
+    </div>
+  </div>
+
+  <div class="card">
+    
+    <div class="main">
+      <!-- <img src="imgs/work-steps-2.png" alt=""> -->
+
+      <div class="text">
+       <h3>2️⃣ Flashcard System with Active Recall:</h3>
+       
+      <p>Instead of just rereading words, our system challenges you with flashcards to actively recall the meaning—boosting memory retention.
+
+       </p>
+
+      </div>
+     
+    </div>
+  </div>
+
+
+
+  <div class="card">
+   
+    <div class="main">
+      <!-- <img src="imgs/work-steps-3.png" alt=""> -->
+          
+      <div class="text">
+        <h3>
+3️⃣ Spaced Repetition for Long-Term Retention:</h3>
+        
+       <p>- Hard words? Revise them the same day.<br>
+    
+- Medium-difficulty words? Revise after 1 day.<br>
+    
+- Easy words? Revise after 4+ days, depending on your past performance.<br>
+        </p>
+ 
+       </div>
+    
+      </div>
+     
+    </div>
+
+  </div>
+
+
+
+</div>
+
+</div>
+  </div>
+
+
+</div>
+  <!-- end of how it works  -->
+
+ 
+
+
+
+<!
+  
+{% endblock %}

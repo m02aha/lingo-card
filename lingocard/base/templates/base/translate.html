@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+{% load static%}
+{% block content %}
+
+
+ 
+<div class="container">
+
+<!-- <h2>search for the translation</h2> -->
+    <form  action ="{% url 'translate'%}" method="POST" class="search-form" >
+{% csrf_token%}
+<div class="search">
+<label for="source" > from:</label>
+<select id="source" name="source">
+    <option value="en">english</option>
+    <option value="es">spanish</option>
+    <option value="pt">Portuguese (Portugal)</option>
+    <option value="fr">french</option>
+    <option value="zh-CN">Mandarin (China Mainland)</option>
+
+</select>
+<label for="dest" > to :</label>
+<select id="dest" name="dest">
+    <option value="en">english</option>
+    <option value="es">spanish</option>
+    <option value="pt">Portuguese (Portugal)</option>
+     <option value="fr">french</option>
+    <option value="zh-CN">Mandarin (China Mainland)</option>
+
+</select>
+</div>
+
+
+<div id="translate" class="result">
+
+    <input type="text" name="original" placeholder="search for translation">
+    
+<button type="submit" >GO</button>
+
+<div class="trans-card">
+
+
+<div>
+<p>Original Text: {{ translation.original_txt }}</p>
+<audio controls>
+    <source src="{{ translation.original_audio.url }}" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+
+<p>Translated Text: {{ translation.translated_txt }}</p>
+<audio controls>
+    <source src="{{ translation.translated_audio.url }}" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+</div>
+
+</div>
+</div>
+
+    </form>
+{% if translation %}
+
+
+
+</div>
+
+{% else %}
+<p></p>
+
+   
+{% endif %}
+
+{% endblock %}

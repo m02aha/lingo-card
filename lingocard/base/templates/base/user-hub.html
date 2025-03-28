@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{% load static%}
+
+{% block content %}
+
+
+<div class="container">
+
+    <h1>hello {{request.user.username}}</h1>
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" name="word" id="add-slot" placeholder="search a Word definitoin">
+        <input type="submit" value="Search" id="search-btn">
+    </form>
+
+    <div class="info">
+        <p> all cards :{{allcount}}</p>
+        <p> cards of today :{{revisenum}}</p>
+    </div>
+
+    <div >
+        <a  id='start-revising' href="{% url 'user-hub-revise'%}">start revising</a>
+    </div>
+
+    <!-- <div class="card">
+        {% for card in allcards %}
+
+       <ul>
+        <li>{{card.word}}</li>
+        <li>{{card.definition }}</li>
+        <li>{{card.status}}</li>
+       
+       
+        <li>{{card.created}}</li>
+        <li>{{card.createdd}}</li>
+       </ul> -->
+
+
+        <!-- {% endfor %} -->
+    </div>
+
+
+</div>
+
+{% endblock %}

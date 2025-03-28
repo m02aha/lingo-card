@@ -1,0 +1,48 @@
+{% load static %}
+            <header>
+                <div class="container">
+                    <div>
+
+                        <div class="logo">
+                            <span><a href="{% url 'home' %}">.flashword</a></span>
+                         
+                             
+                         </div>
+                         
+                         <nav>
+                             
+                               
+                         {% if request.user.is_authenticated %}
+                         <a href="{% url 'logout'%}">log Out</a>
+                         <!-- <a href="{% url 'user-hub' request.user.id %}"><img src="{% static 'images/skills-01.jpg'%}" alt=""></a> -->
+                         
+                         {% else %}
+                      
+                         <a href="{% url 'login'%}">login</a>
+                         <img src="{% static 'images/skills-01.jpg'%}" alt="">
+                         {% endif %}
+                         
+                           
+                               
+                            
+                         </nav>
+                        
+                    </div>
+                    <hr>
+
+    
+
+
+                
+
+    
+                </div>
+              
+                
+
+              
+            </header>
+
+            <div class="main">
+                
+            </div>

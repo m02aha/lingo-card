@@ -1,0 +1,82 @@
+{% extends 'main.html' %}
+{% load static%}
+{% block content %}
+
+
+ 
+
+    
+
+<div class="container revision">
+    <div class="card">
+
+        {% for card in revision_cards %}
+        
+<div class="trans-card">
+<div class="flip">check answer</div>
+
+
+<div>
+    <p> {{ card.original_txt }}</p>
+
+
+   
+<audio controls>
+    <source src="{{ card.original_audio.url }}" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+ </div>
+
+ <div class="answer">
+
+
+<p> {{ card.translated_txt }}</p>
+<audio controls>
+    <source src="{{ card.translated_audio.url }}" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+    <div class="check-status">
+        <form class="statusform" action="{% url 'status_change'%}" method="post">
+            {% csrf_token%}
+        <small >how difficult was that?</small>
+        <input type="hidden" name="card_id" value="{{card.id}}">
+        <input type="hidden" name="prev_status" value="{{card.status}}">
+        <label>
+        <input type="radio" name="status_{{card.id}}" value="hard">hard
+         
+        </label>
+         <label>
+        <input type="radio" name="status_{{card.id}}" value="medium">medium
+
+        </label>
+         <label>
+        <input type="radio" name="status_{{card.id}}" value="easy">easy
+
+        </label>
+        
+        </form>
+</div>
+
+      
+</div>
+    </div>
+        <hr>
+
+    {% empty %}
+    <h4>well done ! you have completeed your session!!</h4>
+        {% endfor %}
+   
+
+
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+

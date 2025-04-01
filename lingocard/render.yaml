@@ -1,7 +1,7 @@
 version: 1
 services:
   - type: web
-    name: lingo-card-1  # Replace with your service name
+    name: lingo-card-1  # This is your service name
     env: python
     buildCommand: |
       apt-get update && apt-get install -y \
@@ -11,4 +11,4 @@ services:
       python3-dev \
       && pip install --upgrade pip \
       && pip install -r requirements.txt
-   startCommand: python manage.py runserver 0.0.0.0:8000
+    startCommand: python manage.py runserver 0.0.0.0:8000  # Ensure this is the correct command to start your app

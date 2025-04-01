@@ -1,12 +1,14 @@
 version: 1
 services:
   - type: web
-    name: lingo-card-1 # Replace with your service name
+    name: lingo-card-1  # Replace with your service name
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python your_app.py  # Replace with your start command
-    systemPackages:
-      - libxml2-dev
-      - libxslt-dev
-      - gcc  # Ensure gcc is installed for compiling
-      - python3-dev  # Include Python development headers
+    buildCommand: |
+      apt-get update && apt-get install -y \
+      libxml2-dev \
+      libxslt-dev \
+      gcc \
+      python3-dev \
+      && pip install --upgrade pip \
+      && pip install -r requirements.txt
+   startCommand: python manage.py runserver 0.0.0.0:8000

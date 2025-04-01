@@ -44,4 +44,4 @@ typing_extensions==4.12.2
 tzdata==2021.5
 urllib3==1.26.6
 virtualenv==20.8.1
-whitenoise==6.9.0
+whitenoise==6.4.0

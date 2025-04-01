@@ -16,7 +16,14 @@ from typing import Tuple,List,Any
 import asyncio
 # Create your views here.
 
+import os
+from django.http import HttpResponse
+from django.conf import settings
 
+def list_static_files(request):
+    static_dir = settings.STATIC_ROOT
+    files = os.listdir(static_dir)
+    return HttpResponse("<br>".join(files))
 def home(request):
     return render(request,'base/home.html')
 

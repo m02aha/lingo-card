@@ -128,7 +128,7 @@ STATIC_URL = '/static/'
 
 
 # Define the STATIC_ROOT
-STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
 
 
 #upload files to this folder

@@ -128,9 +128,15 @@ STATIC_URL = '/static/'
 
 
 # Define the STATIC_ROOT
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # This is where collectstatic will gather files
 
+# Add STATICFILES_DIRS to include your app's static files
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  # Adjust this path to match your app's static directory
+    # Add other app static directories if needed
+]
 #upload files to this folder
 MEDIA_ROOT=BASE_DIR / "uploads"
 MEDIA_URL = "/files/"  # Set MEDIA_URL to serve files

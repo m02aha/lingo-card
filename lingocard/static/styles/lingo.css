@@ -141,7 +141,7 @@ z-index:-1;
 /* dots design  */
 .dots{
   position: absolute;
-/*   background-image: url("../imgs/dots.png"); */
+  background-image: url("../images/dots.png");
   z-index: 1;
   height: 186px;
   width: 204px;

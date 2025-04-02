@@ -5,8 +5,9 @@ from django.conf import settings
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 
-def txtToSpeach(text,lang):
-   tts = gTTS(text=text, lang=lang, slow=False)
+
+def txtToSpeach(text, lang):
+    tts = gTTS(text=text, lang=lang, slow=False)
     
     # Use BytesIO to save the audio in memory
     audio_buffer = io.BytesIO()

@@ -145,8 +145,8 @@ STATICFILES_DIRS = [
 
 
 # Dropbox settings
-DEFAULT_FILE_STORAGE = 'django_dropbox_storage.storage.DropboxStorage'
-DROPBOX_OAUTH2_TOKEN = os.environ.get('DROPBOX_ACCESS_TOKEN')  # Set this in your environment variables
-DROPBOX_ROOT_PATH = '/lingo_card'  # Folder in your Dropbox app where files will be stored
-
+# DEFAULT_FILE_STORAGE = 'django_dropbox_storage.storage.DropboxStorage'
+# DROPBOX_OAUTH2_TOKEN = os.environ.get('DROPBOX_ACCESS_TOKEN')  # Set this in your environment variables
+# DROPBOX_ROOT_PATH = '/lingo_card'  # Folder in your Dropbox app where files will be stored
+DROPBOX_ACCESS_TOKEN = os.environ.get('DROPBOX_ACCESS_TOKEN') 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

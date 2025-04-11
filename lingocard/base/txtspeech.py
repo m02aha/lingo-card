@@ -1,22 +1,17 @@
-import dropbox
 from gtts import gTTS 
 import uuid
-import io
 import os
+from django.conf import settings
 
-def txtToSpeach(text, lang):
-    tts = gTTS(text=text, lang=lang, slow=False)
+def txtToSpeach(text,lang):
+    tts=gTTS(text=text,lang=lang,slow=False)
+    filename=f"tts_audio_{uuid.uuid4()}.mp3"
+    audio_path=os.path.join(settings.MEDIA_ROOT,'audio',filename)
+    # Ensure the directory exists
+    os.makedirs(os.path.dirname(audio_path), exist_ok=True)
+    tts.save(audio_path)
     
-    # Use BytesIO to save the audio in memory
-    audio_buffer = io.BytesIO()
-    tts.save(audio_buffer)  # Save to the buffer
-    audio_buffer.seek(0)  # Move to the beginning of the BytesIO buffer
 
-    filename = f"tts_audio_{uuid.uuid4()}.mp3"
-    dbx = dropbox.Dropbox(os.environ.get('DROPBOX_ACCESS_TOKEN'))
+    return audio_path
 
-    # Upload the audio file to Dropbox
-    dbx.files_upload(audio_buffer.read(), f'/lingo_card/audio/{filename}')
-
-    return f'/lingo_card/audio/{filename}'  # Return the path to the file
 # print(txtToSpeach('hello every one','en'))

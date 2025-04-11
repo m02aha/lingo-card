@@ -140,13 +140,9 @@ STATICFILES_DIRS = [
     # Add other app static directories if needed
 ]
 #upload files to this folder
-# MEDIA_ROOT=BASE_DIR / "uploads"
-# MEDIA_URL = "/files/"  # Set MEDIA_URL to serve files
+MEDIA_ROOT=BASE_DIR / "uploads"
+MEDIA_URL = "/files/"  # Set MEDIA_URL to serve files
+# Default primary key field type
+# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
-
-# Dropbox settings
-# DEFAULT_FILE_STORAGE = 'django_dropbox_storage.storage.DropboxStorage'
-# DROPBOX_OAUTH2_TOKEN = os.environ.get('DROPBOX_ACCESS_TOKEN')  # Set this in your environment variables
-# DROPBOX_ROOT_PATH = '/lingo_card'  # Folder in your Dropbox app where files will be stored
-DROPBOX_ACCESS_TOKEN = os.environ.get('DROPBOX_ACCESS_TOKEN') 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

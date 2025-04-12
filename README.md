@@ -11,7 +11,7 @@ an innovative translator helps you study new translated phrases, it applies scie
 
 ![lingo-revise](https://github.com/user-attachments/assets/d789719b-9476-4e42-a982-5a173fbd87d9)
 
-###### link to website| [demo](https://m02aha.github.io/Tasksm.io/)
+###### link to website| [demo](https://lingo-card-1.onrender.com/)
 
 
 ## Overview

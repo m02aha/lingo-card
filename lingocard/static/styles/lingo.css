@@ -14,8 +14,40 @@ html{
    --main-padding:80px;
 }
 
+
 .register-login{
   min-height: 1000px;
+  display: flex;
+  justify-content: center;
+  
+}
+.register-login input {
+  display: block;
+  margin-top: 10px;
+  padding: 7px;
+  border: 2px solid gray;
+  border-radius: 2px;
+    width:300px;
+}
+.register-login  label {
+  display: block;
+  font-size: 18px;
+
+  margin-top: 20px;
+  margin-right: 10px;
+}
+.register-login  .go{
+  background-color: var(--main-color);
+  border: none;
+  color: white;
+  font-size: 16px;
+  /* font-weight: bold; */
+  padding: 5px;
+}
+.register-login  .go,
+.register-login  p{
+  margin-top: 30px;
+
 }
 
 #translate{

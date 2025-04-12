@@ -4,26 +4,24 @@
 
 
 
-<div class="container register-login">
+<div class="container register-login" style="margin-top: 100px;">
 {% if page == 'login'%}
 <form action="" method="post">
     
+    
     {% csrf_token %}
+    
 <!-- 
    <label for="username">Username</label>
    <input type="text" name="username" id="username" placeholder="type A username">
-    
     -->
-    <ul>
-        <li><strong>Username and emails</strong> must be unique</li>
-    </ul>
    <label for="email">Email</label>
    <input type="email" name="email" id="email" placeholder="">
 
    <label for="password">password</label>
    <input type="password" name="password" id="password" placeholder="">
 
-    <input type="submit" value="Log in">
+    <input type="submit" value="Log in" class="go">
    <p>Haven't signed up yet  ? <a href="{% url 'register'%}">Sign up</a></p>
 </form>
 
@@ -35,14 +33,17 @@
 
     {% csrf_token %}
 
+        <samll><i>username and email must be unique</i></small>
+ 
     
     {{form.as_p}}
 
 
-    <input type="submit" value="Register">
+    <input type="submit" value="Register" class="go">
+<p>Already have account ? <a href="{% url 'login'%}">Log in</a></p>
+
 </form>
 
-<p>Already have account ? <a href="{% url 'login'%}">Log in</a></p>
 
 {% endif %}
 

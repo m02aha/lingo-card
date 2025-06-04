@@ -1,5 +1,5 @@
 # lingo-card
-an innovative translator helps you study new translated phrases, it applies scientific study principles such  as active recall and spaced repetition. translations are saved, and revised via flashcards with personalized schedules according to the user's  learning difficulty 
+A flashcard translator helps you study new translated phrases, it applies scientific study principles such  as active recall and spaced repetition. translations are saved and revised via flashcards with personalised schedules according to the user's  learning difficulty 
 
 
 !lingo]()

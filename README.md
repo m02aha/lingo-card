@@ -15,15 +15,8 @@ A flashcard translator helps you study new translated phrases, it applies scient
 
 
 ## Overview
-Welcome to the Language Learning Translator! This project is designed to help language learners effectively memorize vocabulary using scientifically-backed techniques: Active Recall and Spaced Repetition. Our platform not only translates words and phrases but also saves them for future revision, ensuring that you never forget what you've learned.
+This project is designed to help language learners effectively memorize vocabulary using scientifically-backed techniques: Active Recall and Spaced Repetition. not only translates words and phrases but also saves them for future revision, ensuring that you never forget what you've learned.
 
-
-## Features
-- Never Forget New Words: Every translation is saved for future revision.
-- Master Vocabulary Faster: Active Recall strengthens memory retention.
-- Smart Learning Schedule: Spaced Repetition ensures you revise at the right time.
-- Audio + Text: Listen and read for a full-language experience.
-- Personalized Learning Journey: Review cards based on your difficulty level.
 
   
 ## How It Works
@@ -39,10 +32,7 @@ Welcome to the Language Learning Translator! This project is designed to help la
 ## The Science Behind It
 1. Active Recall: Actively trying to remember information strengthens neural connections, making it easier to retrieve later. Our flashcards force your brain to recall words instead of just recognizing them.
 2. Spaced Repetition: Spacing out revision sessions is key to tackling the forgetting curve. Hard words are shown frequently, while easier ones appear less often, ensuring maximum retention with minimum effort.
-   
-## Who Is This For?
-✅ Language learners who struggle to retain new vocabulary.
-✅ Busy individuals need an efficient way to memorize phrases.
+
 
 
 ## tech used?
@@ -55,9 +45,6 @@ Welcome to the Language Learning Translator! This project is designed to help la
 - javascript 
 
 
-## What I learned :grinning:
-
-Since learning a language is an interest to me. This project was a great experience to practice how to transform ideas into software features. I learned how to develop faster by applying an iterative approach to adding project features. Besides practising the Django framework. I also learned  about integrating asynchronous  calls with Django in running translating libraries and Designing a better utility function that handles file storage. 
 
 
 
